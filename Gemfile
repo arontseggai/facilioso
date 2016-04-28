@@ -1,15 +1,19 @@
 source "https://rubygems.org"
 
-ruby "2.2.3"
+ruby "2.3.0"
 
-gem "rails", "4.2.3"
+gem "rails", "4.2.6"
 gem "pg"
 gem "figaro"
+gem "slim-rails"
 gem "simple_form"
 gem "country_select"
 gem "high_voltage"
+
 gem "devise"
-# gem "pundit"
+gem 'cancancan'
+gem 'rolify'
+
 gem "paperclip"
 gem "aws-sdk", "< 2.0"
 
