@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :owner do
-    resources :apartments, only: :index
+    resource :dashboard, only: :show
+    resources :apartments, only: [:index, :show, :new, :create, :update]
   end
 end
