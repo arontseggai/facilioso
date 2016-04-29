@@ -1,0 +1,26 @@
+.navbar-wagon
+  /! Logo
+  = link_to root_path, class: "navbar-wagon-brand" do
+    = image_tag "logo.png"
+
+  .navbar-wagon-item
+    .dropdown
+      i.fa.fa-bars.dropdown-toggle data-toggle="dropdown"
+      ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
+        - if user_signed_in?
+          li
+            = link_to "#" do
+              i.fa.fa-user
+              = t ".profile", default: "Profile"
+          li
+            = link_to "#" do
+              i.fa.fa-home
+              = t ".profile", default: "Home"
+          li
+            = link_to destroy_user_session_path, method: :delete do
+              i.fa.fa-sign-out
+              = t ".sign_out", default: "Log out"
+        - else
+          li
+            = link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
+
