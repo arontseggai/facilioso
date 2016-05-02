@@ -1,0 +1,11 @@
+= content_for(:title) do
+  | Home
+= content_for(:description) do
+.container
+  .row
+    .col-xs-12.col-sm-8.col-sm-offset-2
+      h1 Welcome!
+      h2 This is the homepage
+
+      - if user_signed_in? && current_user.has_role? :owner
+        = link_to 'dashboard', owner_dashboard_path
