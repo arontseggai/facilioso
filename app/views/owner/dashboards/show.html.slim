@@ -1,0 +1,13 @@
+.text-center
+  h1 YES ROUTING!
+  h2 These are your apartments
+  - @apartments.each do |apartment|
+    = link_to apartment.street, owner_apartment_path(apartment)
+    div class="btn btn-danger"
+      = link_to 'BOEM' , owner_apartment_path(apartment), method: :delete
+    br
+
+
+  = link_to 'Add apartment', new_owner_apartment_path
+
+

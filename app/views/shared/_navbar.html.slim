@@ -1,0 +1,23 @@
+ul.navigation
+  - if user_signed_in?
+    li.nav-item
+      = link_to 'Home', root_path
+    - if current_user.has_role? :owner
+      li.nav-item
+        = link_to 'Apartments', owner_dashboard_path
+    - if current_user.has_role? :manager
+      li.nav-item
+        = link_to 'Manage portfolio', manager_dashboard_path
+
+
+    li.nav-item
+      = link_to destroy_user_session_path, method: :delete do
+        i
+        = t ".sign_out", default: "Log out"
+  - else
+    li.nav-item
+      = link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
+
+
+input#nav-trigger.nav-trigger type="checkbox" /
+label for="nav-trigger"
