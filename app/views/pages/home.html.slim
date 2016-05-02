@@ -7,5 +7,5 @@
       h1 Welcome!
       h2 This is the homepage
 
-      - if user_signed_in? && current_user.has_role? :owner
+      - if (user_signed_in?) && (current_user.has_role? :owner)
         = link_to 'dashboard', owner_dashboard_path
