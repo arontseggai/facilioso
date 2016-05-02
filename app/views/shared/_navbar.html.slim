@@ -2,8 +2,13 @@ ul.navigation
   - if user_signed_in?
     li.nav-item
       = link_to 'Home', root_path
-    li.nav-item
-      = link_to 'Apartments', owner_dashboard_path
+    - if current_user.has_role? :owner
+      li.nav-item
+        = link_to 'Apartments', owner_dashboard_path
+    - if current_user.has_role? :manager
+      li.nav-item
+        = link_to 'Manage portfolio', manager_dashboard_path
+
 
     li.nav-item
       = link_to destroy_user_session_path, method: :delete do

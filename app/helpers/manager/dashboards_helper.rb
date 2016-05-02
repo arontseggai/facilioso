@@ -1,0 +1,2 @@
+module Manager::DashboardsHelper
+end

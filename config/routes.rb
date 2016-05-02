@@ -5,4 +5,9 @@ Rails.application.routes.draw do
     resource :dashboard, only: :show
     resources :apartments, only: [:index, :show, :new, :create, :update, :destroy]
   end
+
+  namespace :manager do
+    resource :dashboard, only: :show
+    resources :apartments, only: [:index, :show, :update]
+  end
 end
