@@ -1,0 +1,55 @@
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 500px;
+  position: relative;
+  margin: 10% auto;
+  padding: 20px 20px;
+  background: white;
+
+}
+
+.close {
+
+  color: black;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  top: 20px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+
+}
+
+.close:hover {
+
+}
+
+
+
+/* Booking button */
+
+.create-booking {
+  background-color: blue;
+  padding: 20px 30px;
+  border: solid black 2px;
+}

@@ -1,0 +1,49 @@
+div class="command-panel"
+  h2
+    | Bookings
+  ul
+    h3 today
+    li laanweg today
+    li grootzeil today
+    li
+    li
+    li
+  ul
+    h3 tomorrow
+    li laanweg tomorrow
+    li grootzeil tomorrow
+    li
+    li
+    li
+  ul
+    h3 thursday
+    li laanweg thursday
+    li centraal station thursday
+    li
+    li
+    li
+
+div class="wrapper text-center"
+  div class="command-buttons"
+    div id="dinges"
+      a.btn.create-booking href="#CreateBooking"  create booking
+    #CreateBooking.modalDialog
+      div
+        a.close href="#close" title="Close"  X
+        h2 New Booking
+        p This is a sample modal box that can be created using the powers of CSS3.
+        p You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.
+
+    div id="dinges"
+      a.btn.create-booking href="#AssignCleaner"  assign cleaner
+    #AssignCleaner.modalDialog
+      div
+        a.close href="#close" title="Close"  X
+        h2 Assign cleaner
+        p Assign a cleaner to a booking
+
+
+
+
+
+= link_to 'All apartments', manager_apartments_path
