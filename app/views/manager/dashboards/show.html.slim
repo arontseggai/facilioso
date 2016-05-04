@@ -36,8 +36,7 @@ div class="wrapper text-center"
 
           = f.input :amount, :input_html => {:size => 40, :maxlength => 10}, placeholder: 'amount', label: false
 
-          =f.input :expected_arrival,
-
+          = f.input :expected_arrival, as: :date, order: [:day, :month, :year]
 
 
 
