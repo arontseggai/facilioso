@@ -28,11 +28,23 @@ div class="wrapper text-center"
     div id="dinges"
       a.btn.create-booking href="#CreateBooking"  create booking
     #CreateBooking.modalDialog
-      div
+      div class="form-booking-dashboard"
         a.close href="#close" title="Close"  X
-        h2 New Booking
-        p This is a sample modal box that can be created using the powers of CSS3.
-        p You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.
+        = simple_form_for ([:manager, @booking]) do |f|
+
+          = f.input :apartment_id, collection: @apartments, label_method: :street, label: false, value_method: :id, name: "street", wrapper_html: { class: "selector"}, prompt: "Select the apartment"
+
+          = f.input :amount, :input_html => {:size => 40, :maxlength => 10}, placeholder: 'amount', label: false
+
+          =f.input :expected_arrival,
+
+
+
+
+          = f.button :submit, class: "btn-success", value: 'create booking'
+
+
+
 
     div id="dinges"
       a.btn.create-booking href="#AssignCleaner"  assign cleaner

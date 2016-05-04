@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :manager do
     resource :dashboard, only: :show
+    resources :bookings, only: [:new, :create]
     resources :apartments, only: [:index, :show, :update] do
       resources :bookings
       resources :invoices
