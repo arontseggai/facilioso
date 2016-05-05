@@ -31,12 +31,14 @@ div class="wrapper text-center"
       div class="form-booking-dashboard"
         a.close href="#close" title="Close"  X
         = simple_form_for ([:manager, @booking]) do |f|
+          = f.error_notification
 
           = f.input :apartment_id, collection: @apartments, label_method: :street, label: false, value_method: :id, name: "street", wrapper_html: { class: "selector"}, prompt: "Select the apartment"
 
           = f.input :amount, :input_html => {:size => 40, :maxlength => 10}, placeholder: 'amount', label: false
 
           = f.input :expected_arrival, as: :date, order: [:day, :month, :year]
+          = f.input :expected_departure, as: :date, order: [:day, :month, :year]
 
 
 

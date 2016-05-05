@@ -10,7 +10,7 @@ class Manager::BookingsController < ApplicationController
 
       redirect_to '/manager/dashboard'
     else
-      redirect_to home_path
+      redirect_to "/manager/dashboard#CreateBooking"
     end
   end
 
