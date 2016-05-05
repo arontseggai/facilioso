@@ -13,6 +13,7 @@ gem "high_voltage"
 gem "devise"
 gem 'cancancan'
 gem 'rolify'
+gem 'enumerize'
 
 gem "paperclip"
 gem "aws-sdk", "< 2.0"

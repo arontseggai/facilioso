@@ -1,10 +1,7 @@
 class Manager::BookingsController < ApplicationController
 
   def create
-    invoice = Invoice.create
     @booking = Booking.new(booking_params)
-    @booking.invoice_id = invoice.id
-
 
     if @booking.save
 
@@ -14,7 +11,8 @@ class Manager::BookingsController < ApplicationController
     end
   end
 
+  private
   def booking_params
-    params.require(:booking).permit(:apartment_id, :invoice_id, :amount, :expected_arrival, :expected_departure)
+    params.require(:booking).permit(:apartment_id, :invoice_id, :amount, :expected_arrival, :expected_departure, :notes)
   end
 end

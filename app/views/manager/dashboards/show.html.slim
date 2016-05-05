@@ -1,27 +1,21 @@
 div class="command-panel"
-  h2
-    | Bookings
   ul
-    h3 today
-    li laanweg today
-    li grootzeil today
-    li
-    li
-    li
+    h3 check-out
+    - checkout_today.each do |booking|
+      li = booking.apartment.street
+  ul
+    h3 check-in
+    - bookings_today.each do |booking|
+      li = booking.apartment.street
   ul
     h3 tomorrow
-    li laanweg tomorrow
-    li grootzeil tomorrow
-    li
-    li
-    li
+    - bookings_tomorrow.each do |booking|
+      li = booking.apartment.street
   ul
-    h3 thursday
-    li laanweg thursday
-    li centraal station thursday
-    li
-    li
-    li
+    h3 = after_tomorrow
+    - bookings_after_tomorrow.each do |booking|
+      li = booking.apartment.street
+
 
 div class="wrapper text-center"
   div class="command-buttons"
@@ -30,12 +24,15 @@ div class="wrapper text-center"
     #CreateBooking.modalDialog
       div class="form-booking-dashboard"
         a.close href="#close" title="Close"  X
+        h3 New Booking
         = simple_form_for ([:manager, @booking]) do |f|
           = f.error_notification
 
           = f.input :apartment_id, collection: @apartments, label_method: :street, label: false, value_method: :id, name: "street", wrapper_html: { class: "selector"}, prompt: "Select the apartment"
-
           = f.input :amount, :input_html => {:size => 40, :maxlength => 10}, placeholder: 'amount', label: false
+          = f.input :notes, :input_html => {:size => 40, :maxlength => 10}, placeholder: 'notes', label: false
+
+
 
           = f.input :expected_arrival, as: :date, order: [:day, :month, :year]
           = f.input :expected_departure, as: :date, order: [:day, :month, :year]
