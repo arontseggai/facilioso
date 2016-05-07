@@ -2,19 +2,19 @@ div class="command-panel"
   ul
     h3 check-out
     - checkout_today.each do |booking|
-      li = booking.apartment.street
+      li = link_to booking.apartment.street, manager_apartment_path(booking)
   ul
     h3 check-in
     - bookings_today.each do |booking|
-      li = booking.apartment.street
+      li = link_to booking.apartment.street, manager_apartment_path(booking)
   ul
     h3 tomorrow
     - bookings_tomorrow.each do |booking|
-      li = booking.apartment.street
+      li = link_to booking.apartment.street, manager_apartment_path(booking)
   ul
     h3 = after_tomorrow
     - bookings_after_tomorrow.each do |booking|
-      li = booking.apartment.street
+      li = link_to booking.apartment.street, manager_apartment_path(booking)
 
 
 div class="wrapper text-center"
