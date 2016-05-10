@@ -16,6 +16,8 @@ ul.navigation
         = t ".sign_out", default: "Log out"
   - else
     li.nav-item
+      = link_to 'Home', root_path
+    li.nav-item
       = link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
 
 
